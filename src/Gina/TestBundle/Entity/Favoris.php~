@@ -1,0 +1,125 @@
+<?php
+
+namespace Gina\TestBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Favoris
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Gina\TestBundle\Entity\FavorisRepository")
+ */
+class Favoris
+{
+    
+
+      /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateAjout", type="date")
+     */
+    private $dateAjout;
+    
+    
+    
+     /**
+     * @ORM\OneToOne (targetEntity="Gina\TestBundle\Entity\Visiteurs",mappedBy="favoris")
+     */
+    private $visiteur;
+    
+    
+    
+     /**
+     * @ORM\ManyToMany (targetEntity="Gina\TestBundle\Entity\Musiciens", inversedBy="favoris")
+     */
+    private $musiciens;
+    
+    
+    function __construct() {
+        $this->dateAjout=(new \DateTime);
+    }
+    
+
+
+    /**
+     * Set dateAjout
+     *
+     * @param \DateTime $dateAjout
+     * @return Favoris
+     */
+    public function setDateAjout($dateAjout)
+    {
+        $this->dateAjout = $dateAjout;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAjout
+     *
+     * @return \DateTime 
+     */
+    public function getDateAjout()
+    {
+        return $this->dateAjout;
+    }
+
+   
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+   
+
+  
+
+    /**
+     * Add musiciens
+     *
+     * @param \Gina\TestBundle\Entity\Musiciens $musiciens
+     * @return Favoris
+     */
+    public function addMusicien(\Gina\TestBundle\Entity\Musiciens $musiciens)
+    {
+        $this->musiciens[] = $musiciens;
+
+        return $this;
+    }
+
+    /**
+     * Remove musiciens
+     *
+     * @param \Gina\TestBundle\Entity\Musiciens $musiciens
+     */
+    public function removeMusicien(\Gina\TestBundle\Entity\Musiciens $musiciens)
+    {
+        $this->musiciens->removeElement($musiciens);
+    }
+
+    /**
+     * Get musiciens
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMusiciens()
+    {
+        return $this->musiciens;
+    }
+}

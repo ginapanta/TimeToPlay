@@ -1,0 +1,163 @@
+#index
+
+gina_test_homepage:
+    path:     /index
+    defaults: { _controller: GinaTestBundle:Default:index }
+    
+gina_test_choixRegister:
+    path:     /choixRegister
+    defaults: { _controller: GinaTestBundle:Default:choixRegister }
+    
+    
+gina_test_inclure:
+    path:     /inclure
+    defaults: { _controller: GinaTestBundle:Default:inclure }   
+    
+ 
+musiciens_registration:
+    pattern:  /register/musiciens
+    defaults: { _controller: GinaUserBundle:Default:registerMusiciens }
+
+visiteurs_registration:
+    pattern:  /register/visiteurs
+    defaults: { _controller: GinaUserBundle:Default:registerVisiteurs }
+
+    
+gina_test_rechercheArtiste:
+    path:     /rechercheArtiste
+    defaults: { _controller: GinaTestBundle:Default:rechercheArtiste }  
+    
+gina_test_rechercheMedia:
+    path:     /rechercheMedia
+    defaults: { _controller: GinaTestBundle:Default:rechercheMedia }  
+    
+gina_test_rechercheGenre:
+    path:     /rechercheGenre
+    defaults: { _controller: GinaTestBundle:Default:rechercheGenre }    
+    
+    
+#Musiciens
+  
+gina_test_formEditMusicien:
+    path:     /formEditMusicien/{id}
+    defaults: { _controller: GinaTestBundle:Artiste:formEditMusicien }
+   
+gina_test_ajouterMedia:
+    path:     /ajouterMedia/{id}
+    defaults: { _controller: GinaTestBundle:Medias:ajouterMedia }
+#    requirements:
+#        name: ".+"
+   
+    
+gina_test_indexMedias:
+    path:     /indexMedias/{id}
+    defaults: { _controller: GinaTestBundle:Medias:indexMedias }
+    #    requirements:
+#        name: ".+"
+
+gina_test_indexMediasPublic:
+    path:     /indexMediasPublic/{id}
+    defaults: { _controller: GinaTestBundle:Medias:indexMediasPublic }
+    
+gina_test_suppMedia:
+    path:     /suppMedia/{id}
+    defaults: { _controller: GinaTestBundle:Medias:suppMedia }
+    
+gina_test_pageArtiste:
+    path:     /artiste/{id}
+    defaults: { _controller: GinaTestBundle:Artiste:pageArtiste }
+#    requirements:
+#        id:  \id+
+
+gina_test_publicArtiste:
+    path:     /publicArtiste/{id}
+    defaults: { _controller: GinaTestBundle:Artiste:publicArtiste }
+
+    
+gina_test_listeArtistes:
+    path:     /listeArtistes
+    defaults: { _controller: GinaTestBundle:Artiste:listeArtistes }   
+
+gina_test_tableFav:
+    path:     /tableFav/musicien/{id}
+    defaults: { _controller: GinaTestBundle:Artiste:tableFav }    
+      
+    
+gina_test_addFav:
+    path:     /addFav/musicien/{id}
+    defaults: { _controller: GinaTestBundle:Visiteur:addFav }   
+
+
+#Medias
+
+gina_test_listeMedias:
+    path:     /listeMedias
+    defaults: { _controller: GinaTestBundle:Medias:listeMedias }   
+    
+gina_test_addToPlaylist:
+    path:     /addToPlaylist/media/{id}
+    defaults: { _controller: GinaTestBundle:Visiteur:addToPlaylist }        
+    
+gina_test_telecharger:
+    path:     /telecharger/media/{id}
+    defaults: { _controller: GinaTestBundle:Visiteur:telecharger } 
+    
+gina_test_ajouterPost:
+    path:     /ajouterPost/media/{id}
+    defaults: { _controller: GinaTestBundle:Medias:ajouterPost } 
+    
+gina_test_afficherPosts:
+    path:     /afficherPosts
+    defaults: { _controller: GinaTestBundle:Media:afficherPosts } 
+    
+
+#User
+
+    
+gina_test_pageVisiteur:
+    path:     /visiteur/{id}/
+    defaults: { _controller: GinaTestBundle:Visiteur:pageVisiteur }
+   
+    
+gina_test_afficherPlaylist:
+    path:     /afficherPlaylist/user/{id}
+    defaults: { _controller: GinaTestBundle:Visiteur:afficherPlaylist }      
+    
+    
+gina_test_delPlaylist:
+    path:     /delPlaylist/{id}
+    defaults: { _controller: GinaTestBundle:Visiteur:delPlaylist }   
+    
+gina_test_afficherFavoris:
+    path:     /afficherFavoris/favoris/{id}
+    defaults: { _controller: GinaTestBundle:Visiteur:afficherFavoris }   
+   
+gina_test_delFav:
+    path:     /delFav
+    defaults: { _controller: GinaTestBundle:Visiteur:delFav }   
+    
+    
+gina_test_afficherTelechargements:
+    path:     /afficherTelechargements/user/{id}
+    defaults: { _controller: GinaTestBundle:Visiteur:afficherTelechargements }   
+    
+    
+#Tables
+
+gina_test_afficherFavoris:
+    path:     /afficherFavoris
+    defaults: { _controller: GinaTestBundle:Tables:plusFavoris } 
+    
+gina_test_plusTelecharges:
+    path:     /afficherTelechargements
+    defaults: { _controller: GinaTestBundle:Tables:plusTelecharges } 
+    
+gina_test_derniersUploads:
+    path:     /listeMedias
+    defaults: { _controller: GinaTestBundle:Tables:dernierUploads } 
+    
+
+   
+
+
+ 
